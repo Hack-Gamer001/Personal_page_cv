@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from 'react';
@@ -33,8 +32,6 @@ import SplitText from "../components/SplitText";
 import Spline from '@splinetool/react-spline/next';
 import SplineViewer from '../components/SplineViewer';
 import SplineTarjeta1 from '../components/SplineTarjeta1';
-
-
 
 export default function WilbertPortfolio() {
   const [activeTab, setActiveTab] = useState('home');
@@ -133,76 +130,75 @@ export default function WilbertPortfolio() {
   setIsMenuOpen(false);
 };
 
-
   const renderContent = () => {
-    switch (activeTab) {
-      case 'home':
-        return (
-          <main>
-          <div className="relative h-[60vh] w-full">
-        <SplineViewer />
-      </div>
-          <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="mx-auto h-32 w-32 md:h-40 md:w-40 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 mb-6 flex items-center justify-center shadow-2xl">
-                <span className="text-white text-3xl md:text-5xl font-bold">WC</span>
-              </div>
-              <SplitText
-                  text="Wilbert Junior Cardenas Alejo"
-                  className="text-2xl md:text-4xl font-bold text-white mb-2"
-                  delay={100}
-                  duration={0.6}
-                  ease="power3.out"
-                  splitType="chars"
-                  from={{ opacity: 0, y: 40 }}
-                  to={{ opacity: 1, y: 0 }}
-                  threshold={0.1}
-                  rootMargin="-100px"
-                  textAlign="center"
-                />
-              </div>
-              <div className="w-full text-center">
-                <SplitText
-                  text="Ingeniero de Sistemas"
-                  className="text-lg md:text-2xl text-blue-400 mb-4 font-semibold"
-                  delay={100}
-                  duration={0.6}
-                  ease="power3.out"
-                  splitType="chars"
-                  from={{ opacity: 0, y: 40 }}
-                  to={{ opacity: 1, y: 0 }}
-                  threshold={0.1}
-                  rootMargin="-100px"
-                  textAlign="center"
-                />
-              <div className="flex items-center justify-center gap-2 text-gray-300 mb-6">
-                <MapPin className="h-4 w-4" />
-                <span>Cusco, Perú</span>
-              </div>
-              <p className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Especialista en desarrollo de software con amplia experiencia en aplicaciones web, móviles, administración de servidores, redes y tecnologías cloud.
-              </p>
+  switch (activeTab) {
+    case 'home':
+      return (
+        <div className="flex flex-col h-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+          {/* Main: header y spline */}
+          <main className="flex-1 flex flex-col overflow-hidden">
+            {/* 🎬 Sección Spline en pantalla completa */}
+           <div className="relative h-screen w-full" onWheel={(e)=>e.stopPropagation()}>
+                  <SplineViewer />
             </div>
-            
-              {/* Sección Spline interactiva */}
-              <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <SplineTarjeta1 className="aspect-video w-full rounded-lg shadow-lg" />
-                  <SplineTarjeta1 className="aspect-video w-full rounded-lg shadow-lg" />
-                  <SplineTarjeta1 className="aspect-video w-full rounded-lg shadow-lg" />
+
+
+            {/* 🎯 Contenido desplazable */}
+            <div className="flex-1 overflow-y-auto">
+              <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+                {/* Presentación principal */}
+                <div className="text-center mb-12">
+                  <div className="mx-auto h-32 w-32 md:h-40 md:w-40 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 mb-6 flex items-center justify-center shadow-2xl">
+                    <span className="text-white text-3xl md:text-5xl font-bold">WC</span>
+                  </div>
+                  <SplitText
+                    text="Wilbert Junior Cardenas Alejo"
+                    className="text-2xl md:text-4xl font-bold text-white mb-2"
+                    delay={100} duration={0.6}
+                    ease="power3.out" splitType="chars"
+                    from={{ opacity: 0, y: 40 }} to={{ opacity: 1, y: 0 }}
+                    threshold={0.1} rootMargin="-100px" textAlign="center"
+                  />
+                  <SplitText
+                    text="Ingeniero de Sistemas"
+                    className="text-lg md:text-2xl text-blue-400 mb-4 font-semibold"
+                    delay={200} duration={0.6}
+                    ease="power3.out" splitType="chars"
+                    from={{ opacity: 0, y: 40 }} to={{ opacity: 1, y: 0 }}
+                    threshold={0.1} rootMargin="-100px" textAlign="center"
+                  />
+                  <div className="flex items-center justify-center gap-2 text-gray-300 mb-6">
+                    <MapPin className="h-4 w-4" />
+                    <span>Cusco, Perú</span>
+                  </div>
+                  <p className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    Especialista en desarrollo de software con amplia experiencia en aplicaciones web, móviles, administración de servidores, redes y tecnologías cloud.
+                  </p>
+                </div>
+
+                {/* 🎨 Tarjetas Spline */}
+                <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <SplineTarjeta1 className="aspect-video w-full rounded-lg shadow-lg" />
+                    <SplineTarjeta1 className="aspect-video w-full rounded-lg shadow-lg" />
+                    <SplineTarjeta1 className="aspect-video w-full rounded-lg shadow-lg" />
+                  </div>
+                </div>
+
+                {/* 📄 Botón Descargar CV */}
+                <div className="text-center pb-8">
+                  <button className="bg-blue-600 text-white px-6 md:px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center gap-2">
+                    <Download className="h-4 w-4" />
+                    Descargar CV
+                  </button>
                 </div>
               </div>
-              
-            <div className="text-center">
-              <button className="bg-blue-600 text-white px-6 md:px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center gap-2">
-                <Download className="h-4 w-4" />
-                Descargar CV
-              </button>
             </div>
-          </div>
           </main>
-        );
-        
+        </div>
+      );
+
+
       case 'about':
         return (
           <div className="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
@@ -385,12 +381,10 @@ export default function WilbertPortfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
-      {/* Header con botón de menú */}
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
       <header className="sticky top-0 z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            {/* Logo y botón de menú */}
             <div className="flex items-center">
               <button
                 onClick={toggleMenu}
@@ -404,7 +398,6 @@ export default function WilbertPortfolio() {
               </button>
             </div>
 
-            {/* Navegación de pestañas - desktop */}
             <nav className="hidden lg:flex lg:space-x-1">
               {tabs.map((tab) => (
                 <button
@@ -422,7 +415,6 @@ export default function WilbertPortfolio() {
               ))}
             </nav>
 
-            {/* Botón de menú móvil */}
             <button
               onClick={toggleMenu}
               className="lg:hidden p-2 rounded-lg hover:bg-gray-800/50 transition-colors"
@@ -433,18 +425,13 @@ export default function WilbertPortfolio() {
         </div>
       </header>
 
-      {/* Menú desplegable superpuesto */}
       {isMenuOpen && (
         <>
-          {/* Overlay */}
-          <div 
+          <div
             className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
             onClick={() => setIsMenuOpen(false)}
           />
-          
-          {/* Menú lateral */}
           <div className="fixed top-0 left-0 h-full w-80 bg-gray-800/95 backdrop-blur-md border-r border-gray-700 z-50 transform transition-transform duration-300 overflow-y-auto">
-            {/* Header del menú */}
             <div className="p-6 border-b border-gray-700 flex justify-between items-center">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
@@ -463,7 +450,6 @@ export default function WilbertPortfolio() {
               </button>
             </div>
 
-            {/* Navegación principal */}
             <div className="p-4">
               <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
                 Navegación Principal
@@ -490,7 +476,6 @@ export default function WilbertPortfolio() {
                 ))}
               </ul>
 
-              {/* Secciones del portafolio */}
               <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
                 Portafolio
               </h3>
@@ -518,7 +503,6 @@ export default function WilbertPortfolio() {
               </ul>
             </div>
 
-            {/* Footer del menú */}
             <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-700 bg-gray-800/50">
               <div className="text-center text-xs text-gray-400">
                 <p>&copy; 2025 Wilbert</p>
@@ -529,12 +513,10 @@ export default function WilbertPortfolio() {
         </>
       )}
 
-      {/* Contenido principal */}
-      <main className="min-h-screen">
+      <main className="flex-grow">
         {renderContent()}
       </main>
 
-      {/* Footer */}
       <footer className="bg-gray-950/80 backdrop-blur-md border-t border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
