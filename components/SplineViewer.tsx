@@ -3,8 +3,10 @@ import React, { useRef } from 'react';
 import dynamic from 'next/dynamic';
 
 // Import correcto: sin "/next"
-const Spline = dynamic(() => import('@splinetool/react-spline'), { ssr: false });
-
+const Spline = dynamic(() => import('@splinetool/react-spline').then(mod => mod.default), { 
+  ssr: false,
+  loading: () => <div className="w-full h-full bg-gray-800/50 rounded-lg" />
+})
 export default function SplineViewer() {
   const splineRef = useRef<any>(null);
 
