@@ -1,10 +1,11 @@
-import React, { useRef, useEffect } from 'react';
+'use client';
+import React, { useRef } from 'react';
 import dynamic from 'next/dynamic';
 
-// Import dinámico para evitar SSR
+// Import correcto: sin "/next"
 const Spline = dynamic(() => import('@splinetool/react-spline'), { ssr: false });
 
-export default function SplineComponent() {
+export default function SplineViewer() {
   const splineRef = useRef<any>(null);
 
   const handleLoad = (app: any) => {
@@ -13,17 +14,18 @@ export default function SplineComponent() {
 
   const handleMouseDown = (e: any) => {
     if (e.target.name === 'Cube') {
-      console.log('¡Cubo clicado!');
       splineRef.current.emitEvent('mouseHover', 'Cube');
     }
   };
 
   return (
-    <Spline
-      scene="https://prod.spline.design/eIzNmMo4w0pIT6aC/scene.splinecode"
-      onLoad={handleLoad}
-      onMouseDown={handleMouseDown}
-      className="w-full h-full"
-    />
+    <div className="w-full h-full">
+      <Spline
+        scene="https://prod.spline.design/eIzNmMo4w0pIT6aC/scene.splinecode"
+        onLoad={handleLoad}
+        onMouseDown={handleMouseDown}
+        className="w-full h-full"
+      />
+    </div>
   );
 }
