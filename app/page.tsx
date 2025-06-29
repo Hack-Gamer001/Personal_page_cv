@@ -28,6 +28,10 @@ import {
   Wrench
 } from 'lucide-react';
 
+import SplitText from "../components/SplitText";
+import Spline from '@splinetool/react-spline/next';
+import SplineViewer from '../components/SplineViewer';
+
 export default function WilbertPortfolio() {
   const [activeTab, setActiveTab] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -130,13 +134,43 @@ export default function WilbertPortfolio() {
     switch (activeTab) {
       case 'home':
         return (
+          <main>
+          <div className="relative h-[60vh] w-full">
+        <SplineViewer />
+      </div>
           <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <div className="mx-auto h-32 w-32 md:h-40 md:w-40 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 mb-6 flex items-center justify-center shadow-2xl">
                 <span className="text-white text-3xl md:text-5xl font-bold">WC</span>
               </div>
-              <h1 className="text-2xl md:text-4xl font-bold text-white mb-2">Wilbert Junior Cardenas Alejo</h1>
-              <p className="text-lg md:text-2xl text-blue-400 mb-4 font-semibold">Ingeniero de Sistemas</p>
+              <SplitText
+                  text="Wilbert Junior Cardenas Alejo"
+                  className="text-2xl md:text-4xl font-bold text-white mb-2"
+                  delay={100}
+                  duration={0.6}
+                  ease="power3.out"
+                  splitType="chars"
+                  from={{ opacity: 0, y: 40 }}
+                  to={{ opacity: 1, y: 0 }}
+                  threshold={0.1}
+                  rootMargin="-100px"
+                  textAlign="center"
+                />
+              </div>
+              <div className="w-full text-center">
+                <SplitText
+                  text="Ingeniero de Sistemas"
+                  className="text-lg md:text-2xl text-blue-400 mb-4 font-semibold"
+                  delay={100}
+                  duration={0.6}
+                  ease="power3.out"
+                  splitType="chars"
+                  from={{ opacity: 0, y: 40 }}
+                  to={{ opacity: 1, y: 0 }}
+                  threshold={0.1}
+                  rootMargin="-100px"
+                  textAlign="center"
+                />
               <div className="flex items-center justify-center gap-2 text-gray-300 mb-6">
                 <MapPin className="h-4 w-4" />
                 <span>Cusco, Perú</span>
@@ -175,7 +209,9 @@ export default function WilbertPortfolio() {
               </button>
             </div>
           </div>
+          </main>
         );
+        
       case 'about':
         return (
           <div className="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
