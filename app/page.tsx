@@ -29,9 +29,14 @@ import {
 } from 'lucide-react';
 
 import SplitText from "../components/SplitText";
-import Spline from '@splinetool/react-spline/next';
 import SplineViewer from '../components/SplineViewer';
 import SplineTarjeta1 from '../components/SplineTarjeta1';
+import('@splinetool/react-spline/next')
+import dynamic from 'next/dynamic'
+
+// IMPORTACIÓN CORRECTA
+const Spline = dynamic(() => import('@splinetool/react-spline'), { ssr: false })
+
 
 export default function WilbertPortfolio() {
   const [activeTab, setActiveTab] = useState('home');

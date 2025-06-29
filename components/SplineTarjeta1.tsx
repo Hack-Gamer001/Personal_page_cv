@@ -1,15 +1,11 @@
-// components/SplineTarjeta1.tsx
-'use client';
+'use client'
+import React from 'react'
+import dynamic from 'next/dynamic'
 
-import React from 'react';
-import dynamic from 'next/dynamic';
+// Import correcto: solo @splinetool/react-spline
+const Spline = dynamic(() => import('@splinetool/react-spline'), { ssr: false })
 
-// Import dinámico correcto sin rutas inválidas
-const Spline = dynamic(() => import('@splinetool/react-spline'), { ssr: false });
-
-type Props = {
-  className?: string;
-};
+type Props = { className?: string }
 
 export default function SplineTarjeta1({ className = '' }: Props) {
   return (
@@ -19,5 +15,5 @@ export default function SplineTarjeta1({ className = '' }: Props) {
         className="absolute inset-0 w-full h-full"
       />
     </div>
-  );
+  )
 }
