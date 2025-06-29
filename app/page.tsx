@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -31,6 +32,9 @@ import {
 import SplitText from "../components/SplitText";
 import Spline from '@splinetool/react-spline/next';
 import SplineViewer from '../components/SplineViewer';
+import SplineTarjeta1 from '../components/SplineTarjeta1';
+
+
 
 export default function WilbertPortfolio() {
   const [activeTab, setActiveTab] = useState('home');
@@ -179,29 +183,16 @@ export default function WilbertPortfolio() {
                 Especialista en desarrollo de software con amplia experiencia en aplicaciones web, móviles, administración de servidores, redes y tecnologías cloud.
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-12">
-              <div className="text-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-lg border border-gray-700">
-                <div className="w-16 h-16 bg-blue-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Code className="h-8 w-8 text-blue-400" />
+            
+              {/* Sección Spline interactiva */}
+              <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <SplineTarjeta1 className="aspect-video w-full rounded-lg shadow-lg" />
+                  <SplineTarjeta1 className="aspect-video w-full rounded-lg shadow-lg" />
+                  <SplineTarjeta1 className="aspect-video w-full rounded-lg shadow-lg" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">Desarrollo Full Stack</h3>
-                <p className="text-gray-400">Aplicaciones web modernas con tecnologías de vanguardia</p>
               </div>
-              <div className="text-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-lg border border-gray-700">
-                <div className="w-16 h-16 bg-green-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Server className="h-8 w-8 text-green-400" />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">Infraestructura & DevOps</h3>
-                <p className="text-gray-400">Servidores, contenedores y arquitecturas escalables</p>
-              </div>
-              <div className="text-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-lg border border-gray-700">
-                <div className="w-16 h-16 bg-purple-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Smartphone className="h-8 w-8 text-purple-400" />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">Desarrollo Móvil</h3>
-                <p className="text-gray-400">Apps nativas e híbridas para iOS y Android</p>
-              </div>
-            </div>
+              
             <div className="text-center">
               <button className="bg-blue-600 text-white px-6 md:px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center gap-2">
                 <Download className="h-4 w-4" />
