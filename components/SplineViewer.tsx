@@ -56,22 +56,20 @@ export default function SplineViewer() {
 
   return (
     <div className="w-full h-full relative">
-      <Spline
-        scene="https://prod.spline.design/eIzNmMo4w0pIT6aC/scene.splinecode"
-        onLoad={handleLoad}
-        onSplineMouseDown={handleMouseDown}
-        onError={() => setHasError(true)}
-        className={`w-full h-full transition-opacity duration-500 ${
-          loaded ? 'opacity-100' : 'opacity-0'
-        }`}
-      />
-      {loaded && (
-        <div className="absolute inset-0 pointer-events-none opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-          <span className="text-xs bg-black/50 text-white px-2 py-1 rounded">
-            Interactúa con la animación
-          </span>
-        </div>
-      )}
+  <Spline
+    scene="https://prod.spline.design/eIzNmMo4w0pIT6aC/scene.splinecode"
+    onLoad={handleLoad}
+    className={`w-full h-full transition-opacity duration-500 ${
+      loaded ? 'opacity-100' : 'opacity-0'
+    }`}
+  />
+  {loaded && (
+    <div className="absolute inset-0 pointer-events-none opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+      <span className="text-xs bg-black/50 text-white px-2 py-1 rounded">
+        Interactúa con la animación
+      </span>
     </div>
+  )}
+</div>
   );
 }

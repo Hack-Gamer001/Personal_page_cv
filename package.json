@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@splinetool/loader": "^1.10.16",
-    "@splinetool/react-spline": "^4.0.0",
+    "@splinetool/react-spline": "^3.1.1",
     "@splinetool/runtime": "^1.10.16",
     "@splinetool/viewer": "^1.10.16",
     "gsap": "^3.13.0",
@@ -27,11 +27,5 @@
     "@types/react-dom": "^19",
     "tailwindcss": "^4",
     "typescript": "^5.8.3"
-  },
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    }
   }
 }
