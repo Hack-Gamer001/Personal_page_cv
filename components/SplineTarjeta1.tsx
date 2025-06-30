@@ -3,10 +3,10 @@
 import dynamic from 'next/dynamic';
 import React, { useState } from 'react';
 
-// Cambia la importación
+// Importación dinámica mejorada para evitar problemas de exportación
 const Spline = dynamic(
-  () => import('@splinetool/react-spline'),
-  { ssr: false }
+  () => import('@splinetool/react-spline').then(mod => mod.default),
+  { ssr: false, loading: () => <div className="w-full h-full bg-gray-100 animate-pulse" /> }
 );
 
 interface SplineCardProps {
@@ -21,7 +21,7 @@ export default function SplineTarjeta1({
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative aspect-video w-full overflow-hidden ${className}`}>
       <Spline
         scene={sceneUrl}
         onLoad={() => setLoaded(true)}
@@ -29,13 +29,13 @@ export default function SplineTarjeta1({
           loaded ? 'opacity-100' : 'opacity-0'
         }`}
       />
-      {loaded && (
-        <div className="absolute inset-0 pointer-events-none opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-          <span className="text-xs bg-black/50 text-white px-2 py-1 rounded">
-            Interactúa con la animación
-          </span>
-        </div>
-      )}
+      <div className={`absolute inset-0 flex items-end p-4 pointer-events-none transition-opacity duration-300 ${
+        loaded ? 'opacity-100' : 'opacity-0'
+      }`}>
+        <span className="text-xs bg-black/50 text-white px-2 py-1 rounded">
+          Interactúa con la animación
+        </span>
+      </div>
     </div>
   );
 }

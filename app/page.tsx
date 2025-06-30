@@ -180,11 +180,21 @@ export default function WilbertPortfolio() {
                 {/* 🎨 Tarjetas Spline */}
                 <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <SplineTarjeta1 className="aspect-video w-full rounded-lg shadow-lg" />
-                    <SplineTarjeta1 className="aspect-video w-full rounded-lg shadow-lg" />
-                    <SplineTarjeta1 className="aspect-video w-full rounded-lg shadow-lg" />
+                    <SplineTarjeta1
+                      className="aspect-video w-full rounded-lg shadow-lg"
+                      sceneUrl="https://prod.spline.design/SGvePxry1vkq5kYc/scene.splinecode"
+                    />
+                    <SplineTarjeta1
+                      className="aspect-video w-full rounded-lg shadow-lg"
+                      sceneUrl="https://prod.spline.design/SGvePxry1vkq5kYc/scene.splinecode"
+                    />
+                    <SplineTarjeta1
+                      className="aspect-video w-full rounded-lg shadow-lg"
+                      sceneUrl="https://prod.spline.design/SGvePxry1vkq5kYc/scene.splinecode"
+                    />
                   </div>
                 </div>
+
 
                 {/* 📄 Botón Descargar CV */}
                 <div className="text-center pb-8">
