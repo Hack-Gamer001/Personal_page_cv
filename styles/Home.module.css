@@ -1,0 +1,7 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #111827, #1f2937, #111827);
+  color: white;
+}

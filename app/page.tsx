@@ -334,60 +334,117 @@ export default function WilbertPortfolio() {
           </div>
         );
       case 'contact':
-        return (
-          <div className="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">Contacto</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-6">Información de Contacto</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <Mail className="h-5 w-5 text-blue-400" />
-                    <span className="text-gray-300">wilbert.cardenas@email.com</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <MapPin className="h-5 w-5 text-blue-400" />
-                    <span className="text-gray-300">Cusco, Perú</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Calendar className="h-5 w-5 text-blue-400" />
-                    <span className="text-gray-300">Disponible para proyectos</span>
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-4 mt-8">Redes Sociales</h3>
-                <div className="flex gap-4">
-                  <button className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                    <Linkedin className="h-4 w-4" />
-                    LinkedIn
-                  </button>
-                  <button className="flex items-center gap-2 bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors">
-                    <Github className="h-4 w-4" />
-                    GitHub
-                  </button>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-6">Servicios Disponibles</h3>
-                <div className="space-y-4">
-                  <div className="border-l-4 border-blue-500 pl-4">
-                    <h4 className="font-medium text-white">Desarrollo Web</h4>
-                    <p className="text-sm text-gray-400">Aplicaciones web completas y responsivas</p>
-                  </div>
-                  <div className="border-l-4 border-green-500 pl-4">
-                    <h4 className="font-medium text-white">Aplicaciones Móviles</h4>
-                    <p className="text-sm text-gray-400">Apps nativas e híbridas para iOS y Android</p>
-                  </div>
-                  <div className="border-l-4 border-purple-500 pl-4">
-                    <h4 className="font-medium text-white">Infraestructura Cloud</h4>
-                    <p className="text-sm text-gray-400">Configuración y despliegue en la nube</p>
-                  </div>
-                </div>
-              </div>
+  return (
+    <div className="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">Contacto</h2>
+      <div className="grid md:grid-cols-2 gap-8">
+        {/* Columna Izquierda */}
+        <div>
+          <h3 className="text-xl font-semibold text-white mb-6">Información de Contacto</h3>
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <Mail className="h-5 w-5 text-blue-400" />
+              <span className="text-gray-300">wilbert.cardenas@email.com</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <MapPin className="h-5 w-5 text-blue-400" />
+              <span className="text-gray-300">Cusco, Perú</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <Calendar className="h-5 w-5 text-blue-400" />
+              <span className="text-gray-300">Disponible para proyectos</span>
             </div>
           </div>
-        );
-      default:
-        return null;
+
+          {/* 🚀 CAMBIOS AQUÍ */}
+          <h3 className="text-xl font-semibold text-white mb-4 mt-8">Redes Sociales</h3>
+          <div className="flex flex-wrap gap-4">
+            {/* LinkedIn */}
+            <a
+              href="https://www.linkedin.com/in/tu-perfil"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              <Linkedin className="h-4 w-4" />
+              LinkedIn
+            </a>
+
+            {/* GitHub */}
+            <a
+              href="https://github.com/Hack-Gamer001"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors"
+            >
+              <Github className="h-4 w-4" />
+              GitHub
+            </a>
+
+            {/* Discord */}
+            <a
+              href="https://discord.gg/tu-invitacion"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors"
+            >
+              <span className="font-bold">#</span>
+              Discord
+            </a>
+
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/51977175820"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
+            >
+              <span className="font-bold">WA</span>
+              WhatsApp
+            </a>
+
+            {/* Teléfono */}
+            <a
+              href="tel:+51999999999"
+              className="flex items-center gap-2 bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition-colors"
+            >
+              <span className="font-bold">📞</span>
+              Llamar
+            </a>
+          </div>
+          {/* 🚀 FIN DE CAMBIOS */}
+        </div>
+
+        {/* Columna Derecha */}
+        <div>
+          <h3 className="text-xl font-semibold text-white mb-6">Servicios Disponibles</h3>
+          <div className="space-y-4">
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h4 className="font-medium text-white">Desarrollo Web</h4>
+              <p className="text-sm text-gray-400">
+                Aplicaciones web completas y responsivas
+              </p>
+            </div>
+            <div className="border-l-4 border-green-500 pl-4">
+              <h4 className="font-medium text-white">Aplicaciones Móviles</h4>
+              <p className="text-sm text-gray-400">
+                Apps nativas e híbridas para iOS y Android
+              </p>
+            </div>
+            <div className="border-l-4 border-purple-500 pl-4">
+              <h4 className="font-medium text-white">Infraestructura Cloud</h4>
+              <p className="text-sm text-gray-400">
+                Configuración y despliegue en la nube
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+default:
+  return null;
+
     }
   };
 
