@@ -136,7 +136,7 @@ export default function Contact() {
               </h2>
               <div className="flex flex-wrap gap-2.5">
                 {SOCIAL.map((s, i) => (
-                  
+                  <a
                     key={i}
                     href={s.href}
                     target="_blank"
@@ -180,7 +180,7 @@ export default function Contact() {
                   key={i}
                   className={`flex items-start gap-3 p-3 rounded-xl border ${s.bg} transition-colors hover:brightness-110`}
                 >
-                  <div className={`w-8 h-8 rounded-lg bg-gray-900/50 flex items-center justify-center flex-shrink-0`}>
+                  <div className="w-8 h-8 rounded-lg bg-gray-900/50 flex items-center justify-center flex-shrink-0">
                     <s.icon className={`h-4 w-4 ${s.color}`} />
                   </div>
                   <div>

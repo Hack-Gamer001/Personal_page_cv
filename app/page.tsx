@@ -7,11 +7,11 @@ import {
   Server, Brain, Monitor, Smartphone, Palette, Wrench,
 } from "lucide-react";
 
-import HomePage     from "../sections/Home";
-import AboutPage    from "../sections/About";
-import SkillsPage   from "../sections/Skills";
-import ProjectsPage from "../sections/Projects";
-import ContactPage  from "../sections/Contact";
+import HomePage     from "../pages/Home";
+import AboutPage    from "../pages/About";
+import SkillsPage   from "../pages/Skills";
+import ProjectsPage from "../pages/Projects";
+import ContactPage  from "../pages/Contact";
 
 const NAV_TABS = [
   { id: "home",     label: "Inicio",      icon: Home      },

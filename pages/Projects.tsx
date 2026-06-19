@@ -149,7 +149,7 @@ export default function Projects() {
               {/* Links */}
               <div className="flex gap-4 pt-4 border-t border-gray-800">
                 {project.github ? (
-                  
+                  <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -165,7 +165,7 @@ export default function Projects() {
                   </span>
                 )}
                 {project.live && (
-                  
+                  <a
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
