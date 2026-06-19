@@ -22,7 +22,7 @@ const geistClasses = `${geistSans.variable} ${geistMono.variable}`;
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={geistClasses}>
-      <body className="min-h-screen bg-gray-950 text-white font-sans antialiased">
+      <body className="min-h-screen w-full bg-gray-950 text-white font-sans antialiased">
         {children}
       </body>
     </html>

@@ -48,10 +48,9 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-gray-950 text-white flex flex-col">
 
-      {/* ── HEADER ── */}
+      {/* HEADER */}
       <header className="sticky top-0 z-40 bg-gray-950/80 backdrop-blur-md border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-
           <button
             onClick={() => setSidebarOpen(true)}
             className="flex items-center gap-3 p-2 rounded-xl hover:bg-gray-800/60 transition-colors group"
@@ -89,7 +88,7 @@ export default function Page() {
         </div>
       </header>
 
-      {/* ── SIDEBAR DRAWER ── */}
+      {/* SIDEBAR DRAWER */}
       {sidebarOpen && (
         <>
           <div
@@ -97,10 +96,10 @@ export default function Page() {
             onClick={() => setSidebarOpen(false)}
           />
 
-          <aside className="fixed top-0 left-0 h-full w-72 bg-gray-900/98 backdrop-blur-md border-r border-gray-800 z-50 flex flex-col">
+          <aside className="fixed top-0 left-0 h-screen w-72 bg-gray-900 border-r border-gray-800 z-50 flex flex-col overflow-hidden">
 
-            {/* Header */}
-            <div className="p-5 border-b border-gray-800 flex items-center justify-between">
+            {/* Header sidebar */}
+            <div className="p-5 border-b border-gray-800 flex items-center justify-between flex-shrink-0">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
                   <span className="text-white font-bold">WC</span>
@@ -118,58 +117,63 @@ export default function Page() {
               </button>
             </div>
 
-            {/* Nav principal */}
-            <div className="p-4 border-b border-gray-800">
-              <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
-                Navegación
-              </p>
-              <ul className="space-y-1">
-                {NAV_TABS.map((tab) => (
-                  <li key={tab.id}>
-                    <button
-                      onClick={() => { setActiveTab(tab.id); setSidebarOpen(false); }}
-                      className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${
-                        activeTab === tab.id
-                          ? "bg-blue-900/40 text-blue-300 border border-blue-700/40"
-                          : "text-gray-400 hover:text-white hover:bg-gray-800"
-                      }`}
-                    >
-                      <tab.icon className="h-4 w-4 flex-shrink-0" />
-                      {tab.label}
-                      {activeTab === tab.id && (
-                        <ChevronRight className="h-3 w-3 ml-auto" />
-                      )}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {/* Scrollable content */}
+            <div className="flex-1 overflow-y-auto">
 
-            {/* Categorías portafolio */}
-            <div className="p-4 flex-1 overflow-y-auto">
-              <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
-                Portafolio
-              </p>
-              <ul className="space-y-1">
-                {SIDEBAR_CATEGORIES.map((item, i) => (
-                  <li key={i}>
-                    <button
-                      onClick={() => setSidebarOpen(false)}
-                      className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group"
-                    >
-                      <item.icon className="h-4 w-4 flex-shrink-0 text-blue-400 group-hover:text-blue-300" />
-                      <div className="text-left">
-                        <p className="text-sm font-medium">{item.label}</p>
-                        <p className="text-xs text-gray-500">{item.description}</p>
-                      </div>
-                    </button>
-                  </li>
-                ))}
-              </ul>
+              {/* Nav principal */}
+              <div className="p-4 border-b border-gray-800">
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+                  Navegación
+                </p>
+                <ul className="space-y-1">
+                  {NAV_TABS.map((tab) => (
+                    <li key={tab.id}>
+                      <button
+                        onClick={() => { setActiveTab(tab.id); setSidebarOpen(false); }}
+                        className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${
+                          activeTab === tab.id
+                            ? "bg-blue-900/40 text-blue-300 border border-blue-700/40"
+                            : "text-gray-400 hover:text-white hover:bg-gray-800"
+                        }`}
+                      >
+                        <tab.icon className="h-4 w-4 flex-shrink-0" />
+                        {tab.label}
+                        {activeTab === tab.id && (
+                          <ChevronRight className="h-3 w-3 ml-auto" />
+                        )}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Categorías portafolio */}
+              <div className="p-4">
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+                  Portafolio
+                </p>
+                <ul className="space-y-1">
+                  {SIDEBAR_CATEGORIES.map((item, i) => (
+                    <li key={i}>
+                      <button
+                        onClick={() => setSidebarOpen(false)}
+                        className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group"
+                      >
+                        <item.icon className="h-4 w-4 flex-shrink-0 text-blue-400 group-hover:text-blue-300" />
+                        <div className="text-left">
+                          <p className="text-sm font-medium">{item.label}</p>
+                          <p className="text-xs text-gray-500">{item.description}</p>
+                        </div>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
             </div>
 
             {/* Footer sidebar */}
-            <div className="p-4 border-t border-gray-800 flex gap-3">
+            <div className="p-4 border-t border-gray-800 flex gap-3 flex-shrink-0">
               <a
                 href="https://github.com/Hack-Gamer001"
                 target="_blank"
@@ -192,12 +196,12 @@ export default function Page() {
         </>
       )}
 
-      {/* ── CONTENIDO ── */}
-      <main className="flex-grow">
+      {/* CONTENIDO */}
+      <main className="flex-grow w-full">
         {renderContent()}
       </main>
 
-      {/* ── FOOTER ── */}
+      {/* FOOTER */}
       <footer className="bg-gray-950 border-t border-gray-800 py-6 px-4">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3">
           <div className="flex items-center gap-3">
@@ -215,7 +219,7 @@ export default function Page() {
         </div>
       </footer>
 
-      {/* ── NAV MOBILE BOTTOM ── */}
+      {/* NAV MOBILE BOTTOM */}
       <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-gray-950/95 backdrop-blur-md border-t border-gray-800 z-30">
         <div className="flex justify-around py-2">
           {NAV_TABS.map((tab) => (
