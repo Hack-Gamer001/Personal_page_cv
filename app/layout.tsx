@@ -1,4 +1,3 @@
-// app/layout.tsx
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -7,18 +6,10 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Wilbert - Portafolio Personal",
-  description:
-    "Portafolio profesional con aplicaciones móviles, páginas web, programas y diseños creativos",
-  keywords: [
-    "portafolio",
-    "desarrollador",
-    "diseñador",
-    "aplicaciones móviles",
-    "páginas web",
-  ],
-  authors: [{ name: "Wilbert" }],
-  // viewport **ya no aquí** ➜ se maneja abajo
+  title: "Wilbert Cárdenas — Portafolio",
+  description: "Systems Engineer · DevOps · Applied AI · Full Stack · Cusco, Perú",
+  keywords: ["portafolio", "ingeniero sistemas", "devops", "inteligencia artificial", "full stack", "cusco"],
+  authors: [{ name: "Wilbert Junior Cárdenas Alejo" }],
 };
 
 export const viewport: Viewport = {
@@ -26,17 +17,12 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const geistClasses = `${geistSans.variable} ${geistMono.variable}`;
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="es"
-      className={`${geistSans.variable} ${geistMono.variable}`}
-    >
-      <body className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white font-sans antialiased">
+    <html lang="es" className={geistClasses}>
+      <body className="min-h-screen bg-gray-950 text-white font-sans antialiased">
         {children}
       </body>
     </html>
