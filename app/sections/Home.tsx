@@ -1,8 +1,8 @@
 "use client";
 
 import { MapPin, Download, Github, Linkedin } from "lucide-react";
-import SplitText from "../components/SplitText";
-import SplineViewer from "../components/SplineViewer";
+import SplitText from "../../components/SplitText";
+import SplineViewer from "../../components/SplineViewer";
 
 export default function Home() {
   return (

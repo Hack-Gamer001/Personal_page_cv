@@ -63,7 +63,7 @@ const AREAS = [
 export default function About() {
   return (
     <div className="min-h-screen bg-gray-950">
-      <div className="w-full max-w-5xl mx-auto py-16 px-6 sm:px-8 lg:px-12">
+      <div className="w-full mx-auto py-16 px-8 sm:px-12 lg:px-20">
 
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 mb-12">

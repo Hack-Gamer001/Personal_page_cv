@@ -1,5 +1,6 @@
 "use client";
 
+
 import { useState } from "react";
 import {
   Home, User, Code, Briefcase, Mail,
@@ -7,11 +8,11 @@ import {
   Server, Brain, Monitor, Smartphone, Palette, Wrench,
 } from "lucide-react";
 
-import HomePage     from "../pages/Home";
-import AboutPage    from "../pages/About";
-import SkillsPage   from "../pages/Skills";
-import ProjectsPage from "../pages/Projects";
-import ContactPage  from "../pages/Contact";
+import HomePage     from "./sections/Home";
+import AboutPage    from "./sections/About";
+import SkillsPage   from "./sections/Skills";
+import ProjectsPage from "./sections/Projects";
+import ContactPage  from "./sections/Contact";
 
 const NAV_TABS = [
   { id: "home",     label: "Inicio",      icon: Home      },
@@ -47,6 +48,7 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white flex flex-col">
+      
 
       {/* HEADER */}
       <header className="sticky top-0 z-40 bg-gray-950/80 backdrop-blur-md border-b border-gray-800">
