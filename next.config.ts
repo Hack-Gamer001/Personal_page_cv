@@ -1,8 +1,8 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  turbopack: {},
   images: {
-    domains: ['prod.spline.design'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -11,17 +11,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Configuración para Webpack (solo aplica cuando no usas Turbopack)
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.resolve.fallback = {
-        fs: false,
-        path: false,
-      };
-    }
-    return config;
-  },
-  // Nueva forma de especificar paquetes externos
   serverExternalPackages: ['@splinetool/runtime'],
 };
 
