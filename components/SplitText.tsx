@@ -1,18 +1,18 @@
+"use client";
+
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitText as GSAPSplitText } from "gsap/SplitText";
 
-// Registra los plugins de GSAP que vas a usar
-gsap.registerPlugin(ScrollTrigger, GSAPSplitText);
+gsap.registerPlugin(ScrollTrigger);
 
 export interface SplitTextProps {
   text: string;
   className?: string;
   delay?: number;
   duration?: number;
-  ease?: string | ((t: number) => number);
-  splitType?: "chars" | "words" | "lines" | "words, chars";
+  ease?: string;
+  splitType?: "chars" | "words" | "lines";
   from?: gsap.TweenVars;
   to?: gsap.TweenVars;
   threshold?: number;
@@ -36,104 +36,60 @@ const SplitText: React.FC<SplitTextProps> = ({
   onLetterAnimationComplete,
 }) => {
   const ref = useRef<HTMLParagraphElement>(null);
-  const animationCompletedRef = useRef(false);
+  const animated = useRef(false);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || animationCompletedRef.current) return;
+    if (!el || animated.current) return;
 
-    const absoluteLines = splitType === "lines";
-    if (absoluteLines) el.style.position = "relative";
+    const units: string[] =
+      splitType === "words"
+        ? text.split(" ")
+        : splitType === "lines"
+        ? text.split("\n")
+        : text.split("");
 
-    const splitter = new GSAPSplitText(el, {
-      type: splitType,
-      absolute: absoluteLines,
-      linesClass: "split-line",
-    });
+    el.innerHTML = units
+      .map((u, i) =>
+        `<span class="split-unit" style="display:inline-block;will-change:transform,opacity" data-index="${i}">${u === " " ? "&nbsp;" : u}</span>${splitType === "words" ? " " : ""}`
+      )
+      .join("");
 
-    let targets: Element[];
-    switch (splitType) {
-      case "lines":
-        targets = splitter.lines;
-        break;
-      case "words":
-        targets = splitter.words;
-        break;
-      case "words, chars":
-        targets = [...splitter.words, ...splitter.chars];
-        break;
-      default:
-        targets = splitter.chars;
-    }
+    const targets = el.querySelectorAll<HTMLElement>(".split-unit");
 
-    targets.forEach((t) => {
-      (t as HTMLElement).style.willChange = "transform, opacity";
-    });
-
-    const startPct = (1 - threshold) * 100;
-    const m = /^(-?\d+)px$/.exec(rootMargin);
-    const raw = m ? parseInt(m[1], 10) : 0;
-    const sign = raw < 0 ? `-=${Math.abs(raw)}px` : `+=${raw}px`;
-    const start = `top ${startPct}%${sign}`;
+    gsap.set(targets, { ...from, immediateRender: true });
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: el,
-        start,
+        start: "top 90%",
         toggleActions: "play none none none",
         once: true,
       },
-      smoothChildTiming: true,
       onComplete: () => {
-        animationCompletedRef.current = true;
-        gsap.set(targets, {
-          ...to,
-          clearProps: "willChange",
-          immediateRender: true,
-        });
+        animated.current = true;
         onLetterAnimationComplete?.();
       },
     });
 
-    tl.set(targets, { ...from, immediateRender: false, force3D: true });
     tl.to(targets, {
       ...to,
       duration,
       ease,
       stagger: delay / 1000,
-      force3D: true,
     });
 
     return () => {
       tl.kill();
       ScrollTrigger.getAll().forEach((t) => t.kill());
-      gsap.killTweensOf(targets);
-      splitter.revert();
     };
-  }, [
-    text,
-    delay,
-    duration,
-    ease,
-    splitType,
-    from,
-    to,
-    threshold,
-    rootMargin,
-    onLetterAnimationComplete,
-  ]);
+  }, [text]);
 
   return (
     <p
       ref={ref}
       className={`split-parent ${className}`}
-      style={{
-        textAlign,
-        overflow: "hidden",
-        display: "inline-block",
-        whiteSpace: "normal",
-        wordWrap: "break-word",
-      }}
+      style={{ textAlign, overflow: "hidden", display: "inline-block", whiteSpace: "normal", wordWrap: "break-word" }}
     >
       {text}
     </p>
