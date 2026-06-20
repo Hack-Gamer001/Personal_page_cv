@@ -32,7 +32,7 @@ const SOCIAL = [
   },
   {
     label: "WhatsApp",
-    href: "https://wa.me/51977175820",
+    href: "https://wa.me/51975604394",
     icon: null,
     emoji: "WA",
     gradient: "from-green-600 to-green-500",
@@ -154,7 +154,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-xs text-gray-500 mb-0.5">Disponible desde</p>
-                <p className="text-white font-semibold">Julio 2026</p>
+                <p className="text-white font-semibold">Diciembre 2025</p>
               </div>
             </div>
           </div>
