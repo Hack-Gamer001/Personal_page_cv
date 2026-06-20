@@ -1,25 +1,26 @@
 "use client";
 
-
 import { useState } from "react";
 import {
-  Home, User, Code, Briefcase, Mail,
+  Home, User, Code, Briefcase, Mail, Award,
   Menu, X, Github, Linkedin, ChevronRight,
   Server, Brain, Monitor, Smartphone, Palette, Wrench,
 } from "lucide-react";
 
-import HomePage     from "./sections/Home";
-import AboutPage    from "./sections/About";
-import SkillsPage   from "./sections/Skills";
-import ProjectsPage from "./sections/Projects";
-import ContactPage  from "./sections/Contact";
+import HomePage           from "./sections/Home";
+import AboutPage          from "./sections/About";
+import SkillsPage         from "./sections/Skills";
+import ProjectsPage       from "./sections/Projects";
+import ContactPage        from "./sections/Contact";
+import CertificationsPage from "./sections/Certifications";
 
 const NAV_TABS = [
-  { id: "home",     label: "Inicio",      icon: Home      },
-  { id: "about",    label: "Acerca de",   icon: User      },
-  { id: "skills",   label: "Habilidades", icon: Code      },
-  { id: "projects", label: "Proyectos",   icon: Briefcase },
-  { id: "contact",  label: "Contacto",    icon: Mail      },
+  { id: "home",     label: "Inicio",          icon: Home      },
+  { id: "about",    label: "Acerca de",       icon: User      },
+  { id: "skills",   label: "Habilidades",     icon: Code      },
+  { id: "projects", label: "Proyectos",       icon: Briefcase },
+  { id: "certs",    label: "Certificaciones", icon: Award     },
+  { id: "contact",  label: "Contacto",        icon: Mail      },
 ];
 
 const SIDEBAR_CATEGORIES = [
@@ -41,6 +42,7 @@ export default function Page() {
       case "about":    return <AboutPage />;
       case "skills":   return <SkillsPage />;
       case "projects": return <ProjectsPage />;
+      case "certs":    return <CertificationsPage />;
       case "contact":  return <ContactPage />;
       default:         return <HomePage />;
     }
@@ -48,7 +50,6 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white flex flex-col">
-      
 
       {/* HEADER */}
       <header className="sticky top-0 z-40 bg-gray-950/80 backdrop-blur-md border-b border-gray-800">
@@ -100,7 +101,6 @@ export default function Page() {
 
           <aside className="fixed top-0 left-0 h-screen w-72 bg-gray-900 border-r border-gray-800 z-50 flex flex-col overflow-hidden">
 
-            {/* Header sidebar */}
             <div className="p-5 border-b border-gray-800 flex items-center justify-between flex-shrink-0">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
@@ -119,10 +119,8 @@ export default function Page() {
               </button>
             </div>
 
-            {/* Scrollable content */}
             <div className="flex-1 overflow-y-auto">
 
-              {/* Nav principal */}
               <div className="p-4 border-b border-gray-800">
                 <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
                   Navegación
@@ -149,7 +147,6 @@ export default function Page() {
                 </ul>
               </div>
 
-              {/* Categorías portafolio */}
               <div className="p-4">
                 <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
                   Portafolio
@@ -174,7 +171,6 @@ export default function Page() {
 
             </div>
 
-            {/* Footer sidebar */}
             <div className="p-4 border-t border-gray-800 flex gap-3 flex-shrink-0">
               <a
                 href="https://github.com/Hack-Gamer001"
