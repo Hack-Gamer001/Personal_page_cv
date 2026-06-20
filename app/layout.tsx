@@ -8,8 +8,21 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   title: "Wilbert Cárdenas — Portafolio",
   description: "Systems Engineer · DevOps · Applied AI · Full Stack · Cusco, Perú",
-  keywords: ["portafolio", "ingeniero sistemas", "devops", "inteligencia artificial", "full stack", "cusco"],
+  keywords: [
+    "portafolio",
+    "ingeniero sistemas",
+    "devops",
+    "inteligencia artificial",
+    "full stack",
+    "cusco",
+  ],
   authors: [{ name: "Wilbert Junior Cárdenas Alejo" }],
+  openGraph: {
+    title: "Wilbert Cárdenas — Portafolio",
+    description: "Systems Engineer · DevOps · Applied AI · Full Stack · Cusco, Perú",
+    type: "website",
+    locale: "es_PE",
+  },
 };
 
 export const viewport: Viewport = {
@@ -22,7 +35,7 @@ const geistClasses = `${geistSans.variable} ${geistMono.variable}`;
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={geistClasses}>
-      <body className="min-h-screen w-full bg-gray-950 text-white font-sans antialiased">
+      <body className="min-h-screen w-full antialiased">
         {children}
       </body>
     </html>
