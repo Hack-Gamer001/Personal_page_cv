@@ -13,6 +13,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Cache Docker layers
+        uses: actions/cache@v4
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-texlive-${{ hashFiles('cv/main.tex') }}
+          restore-keys: |
+            ${{ runner.os }}-texlive-
+
       - name: Remove old PDF
         run: rm -f cv/main.pdf
 
@@ -21,9 +29,7 @@ jobs:
         with:
           root_file: main.tex
           working_directory: cv
-          latexmk_use_xelatex: false
-          extra_system_packages: "py-pygments"
-          args: "-pdf -interaction=nonstopmode -file-line-error"
+          args: "-pdf -f -interaction=nonstopmode -file-line-error"
 
       - name: Commit PDF
         run: |
