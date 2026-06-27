@@ -129,10 +129,18 @@ export default function Home() {
         {/* CTAs */}
         <div className="flex flex-wrap justify-center gap-4 mb-12"
           style={{ animation: "fadeInUp 0.6s ease 0.6s both" }}>
-          <button className="group relative bg-gradient-to-r from-blue-600 to-blue-500 text-white px-7 py-3 rounded-xl font-semibold hover:from-blue-500 hover:to-cyan-500 transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 inline-flex items-center gap-2">
+
+          <a
+          
+            href="https://raw.githubusercontent.com/Hack-Gamer001/Personal_page_cv/main/cv/main.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download="CV_Wilbert_Cardenas.pdf"
+            className="group relative bg-gradient-to-r from-blue-600 to-blue-500 text-white px-7 py-3 rounded-xl font-semibold hover:from-blue-500 hover:to-cyan-500 transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 inline-flex items-center gap-2"
+          >
             <Download className="h-4 w-4" />
             Descargar CV
-          </button>
+          </a>
           <a href="https://github.com/Hack-Gamer001" target="_blank" rel="noopener noreferrer"
             className="border border-gray-600 text-gray-300 px-7 py-3 rounded-xl font-semibold hover:border-gray-400 hover:text-white hover:bg-gray-800/50 transition-all hover:scale-105 inline-flex items-center gap-2">
             <Github className="h-4 w-4" />
