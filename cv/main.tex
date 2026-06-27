@@ -1,0 +1,253 @@
+%-------------------------
+% CV ATS-Optimizado - Wilbert Junior Cardenas Alejo
+% Version Final
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{paracol}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\geometry{top=0.45in,bottom=0.45in,left=0.45in,right=0.45in}
+\pagestyle{empty}
+
+\definecolor{accentblue}{RGB}{25, 95, 185}
+\definecolor{darktext}{RGB}{20, 20, 20}
+\definecolor{graytext}{RGB}{90, 90, 90}
+\definecolor{lightline}{RGB}{200, 210, 230}
+\color{darktext}
+
+\titleformat{\section}{%
+  \vspace{-4pt}\color{accentblue}\bfseries\normalsize\uppercase
+}{}{0em}{}[{\color{lightline}\titlerule[0.6pt]}\vspace{-3pt}]
+
+\newcommand{\rsection}[1]{%
+  {\vspace{2pt}\color{accentblue}\bfseries\normalsize\uppercase{#1}}\\[-2pt]
+  {\color{lightline}\rule{\linewidth}{0.6pt}}\\[1pt]
+}
+
+\setlength{\columnsep}{0.25in}
+\setlength{\parindent}{0pt}
+
+\newcommand{\cventry}[4]{%
+  \vspace{3pt}
+  {\small\textbf{#1}\hfill\textbf{\small#2}}\\
+  {\footnotesize\color{graytext}\textit{#3}\hfill\textit{#4}}
+  \vspace{1pt}
+}
+
+\newcommand{\cvcertfull}[4]{%
+  \vspace{2pt}
+  {\footnotesize\textbf{#1}\hfill\footnotesize\textbf{#2}}\\
+  {\scriptsize\color{graytext}\textit{#3}\hfill\scriptsize\color{graytext}\textit{#4}}
+  \vspace{0pt}
+}
+
+\newcommand{\cvproject}[3]{%
+  \vspace{3pt}
+  {\small\textbf{#1}}\hfill{\small\textbf{#2}}\\
+  {\footnotesize\color{accentblue}\textit{#3}}
+  \vspace{1pt}
+}
+
+\newcommand{\cvbullet}{\begin{itemize}[leftmargin=0.15in,itemsep=-1pt,topsep=1pt]}
+\newcommand{\cvbulletend}{\end{itemize}\vspace{2pt}}
+
+\newcommand{\skillrow}[2]{%
+  {\footnotesize\textbf{#1}}\\
+  {\scriptsize\color{graytext}#2}\\[3pt]
+}
+
+%-------------------------------------------
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries\color{darktext} WILBERT JUNIOR C\'ARDENAS ALEJO}\\[3pt]
+  {\normalsize\color{accentblue}\textit{Ingeniero de Sistemas $\cdot$ DevOps $\cdot$ IA Aplicada $\cdot$ Full Stack}}\\[4pt]
+  {\small +51 977 175 820 \enspace\textbf{|}\enspace
+    \href{mailto:WJ918xd@hotmail.com}{WJ918xd@hotmail.com} \enspace\textbf{|}\enspace Cusco, Per\'u}\\[2pt]
+  {\small
+    \href{https://linkedin.com/in/wilbert-j001}{linkedin.com/in/wilbert-j001}
+    \enspace\textbf{|}\enspace
+    \href{https://github.com/Hack-Gamer001}{github.com/Hack-Gamer001}
+    \enspace\textbf{|}\enspace
+    \href{https://personal-page-cv.vercel.app}{personal-page-cv.vercel.app}
+    \enspace\textbf{|}\enspace
+    \href{https://behance.net/djmixwtffa20cb}{behance.net/djmixwtffa20cb}
+  }
+\end{center}
+
+{\color{lightline}\rule{\linewidth}{0.8pt}}\vspace{2pt}
+
+{\small Ingeniero de Sistemas con formaci\'on en infraestructuras cr\'iticas, desarrollo de software de extremo a extremo e implementaci\'on de inteligencia artificial aplicada. Experiencia en Proxmox VE, Docker, Kubernetes, pipelines de visi\'on computacional con YOLO y modelos de lenguaje LLM. Perfil complementado con dise\~no gr\'afico, producci\'on audiovisual y desarrollo VR/AR con Unity y Unreal Engine. Orientado a resultados con capacidad de liderazgo t\'ecnico en equipos multidisciplinarios.}
+
+\vspace{5pt}{\color{lightline}\rule{\linewidth}{0.8pt}}\vspace{4pt}
+
+\columnratio{0.61}
+\begin{paracol}{2}
+
+%========== COLUMNA IZQUIERDA ==========
+
+\section{Experiencia Profesional}
+
+\cventry{Practicante en Infraestructura TI y Automatizaci\'on}{Oct. 2025 -- Ene. 2026}
+{Direcci\'on de TI -- Universidad Andina del Cusco}{Cusco, Per\'u}
+\cvbullet
+  \item[\small\textbullet] Implement\'e flujos de automatizaci\'on con n8n y Google Apps Script, reduciendo en un \textbf{40\%} la carga operativa manual en 8 procesos administrativos recurrentes
+  \item[\small\textbullet] Administr\'e \textbf{5+ servicios} con Docker y Nginx como proxy inverso para despliegue de aplicaciones web con alta disponibilidad
+  \item[\small\textbullet] Desarroll\'e integraciones entre \textbf{4 sistemas} via APIs REST y Node.js conectando plataformas institucionales con MySQL
+  \item[\small\textbullet] Elabor\'e informe t\'ecnico con \textbf{8 propuestas de mejora tecnol\'ogica} con cronogramas y an\'alisis de viabilidad
+\cvbulletend
+
+\cventry{Desarrollador de Software Independiente y Consultor Creativo}{2022 -- 2025}
+{Trabajo Independiente}{Cusco, Per\'u}
+\cvbullet
+  \item[\small\textbullet] Dise\~n\'e \textbf{m\'as de 10 sistemas} de gesti\'on empresarial y e-commerce con Java, Laravel, React y PostgreSQL para clientes locales
+  \item[\small\textbullet] Constru\'i \textbf{3+ aplicaciones m\'oviles} Android nativas con Kotlin con APIs REST y almacenamiento SQLite persistente
+  \item[\small\textbullet] Implement\'e arquitecturas MVC en \textbf{5+ lenguajes} (Java, PHP, Python, C\#, JavaScript) garantizando mantenibilidad
+  \item[\small\textbullet] Produje contenido audiovisual con After Effects, Premiere Pro y Photoshop para clientes comerciales
+\cvbulletend
+
+\section{Proyectos Destacados}
+
+\cvproject{Infraestructura de Red Enterprise Virtualizada}{2024--2025}
+{Proxmox VE $\cdot$ Docker $\cdot$ BIND9 $\cdot$ Postfix $\cdot$ Tailscale $\cdot$ TrueNAS/ZFS $\cdot$ Zabbix $\cdot$ FreePBX}
+\cvbullet
+  \item[\small\textbullet] Implement\'e \textbf{7 VMs} en Proxmox VE: DNS/BIND9, correo Postfix/Dovecot, Apache con SNI, VoIP FreePBX, monitoreo Zabbix y VPN Tailscale como subnet router
+  \item[\small\textbullet] Configur\'e almacenamiento enterprise TrueNAS Scale con ZFS RAIDZ1 para home server de producci\'on
+  \item[\small\textbullet] Implement\'e GPU Passthrough din\'amico RTX 5080 a VM Windows 11 via hooks libvirt en Arch Linux
+\cvbulletend
+
+\cvproject{Sistema de Detecci\'on Vehicular -- Tr\'afico Urbano (Tesis UAC)}{2025--2026}
+{Python $\cdot$ YOLO $\cdot$ Qwen2.5-VL $\cdot$ OpenCV $\cdot$ Flask $\cdot$ REST API}
+\cvbullet
+  \item[\small\textbullet] Desarroll\'e sistema de detecci\'on en tiempo real con YOLO y Qwen2.5-VL para clasificaci\'on vehicular multiclase con precisi\'on operativa en condiciones reales de tr\'afico
+  \item[\small\textbullet] Constru\'i pipeline completo con OpenCV generando reportes automatizados de aforo vehicular
+\cvbulletend
+
+\cvproject{Pipeline de Clasificaci\'on Visual con LLM Multimodal}{2024--2025}
+{Python $\cdot$ Flask $\cdot$ Qwen2.5-VL-7B $\cdot$ pysmb $\cdot$ TrueNAS $\cdot$ SMB}
+\cvbullet
+  \item[\small\textbullet] Clasifiqu\'e \textbf{m\'as de 27,000 im\'agenes} con Qwen2.5-VL-7B local sobre almacenamiento SMB en TrueNAS
+  \item[\small\textbullet] Dise\~n\'e prompt engineering por categor\'ia con control de calidad semi-supervisado
+\cvbulletend
+
+\cvproject{Ecosistema de IA Generativa y Agentes Conversacionales}{2024--2025}
+{LM Studio $\cdot$ Ollama $\cdot$ Stable Diffusion $\cdot$ ComfyUI $\cdot$ YOLO $\cdot$ Python}
+\cvbullet
+  \item[\small\textbullet] Desarroll\'e agentes y chatbots con LLMs locales via LM Studio y Ollama sin dependencias de APIs externas
+  \item[\small\textbullet] Implement\'e pipelines de generaci\'on de im\'agenes y video con Stable Diffusion y ComfyUI
+  \item[\small\textbullet] Entren\'e modelo YOLO personalizado con dataset propio para identificaci\'on de variedades de frutas
+\cvbulletend
+
+\cvproject{Portafolio Profesional con Integraciones de Terceros}{2025--2026}
+{Next.js 14 $\cdot$ TypeScript $\cdot$ Tailwind CSS $\cdot$ Vercel $\cdot$ GitHub API $\cdot$ Google Drive API}
+\cvbullet
+  \item[\small\textbullet] Desarroll\'e portafolio con Next.js 14 y TypeScript deployado con CI/CD desde GitHub a Vercel
+  \item[\small\textbullet] Integr\'e GitHub API, Behance embeds y certificaciones din\'amicas via Google Drive API
+\cvbulletend
+
+\cvproject{Entornos Inmersivos para Realidad Virtual y Aumentada}{2023--2025}
+{Blender $\cdot$ Unity $\cdot$ Unreal Engine $\cdot$ Meta Quest 3 $\cdot$ C\#}
+\cvbullet
+  \item[\small\textbullet] Model\'e escenarios 3D en Blender optimizados para Meta Quest 3 con 6 grados de libertad
+  \item[\small\textbullet] Desarroll\'e experiencias VR en Unity con C\# y gesti\'on de escenas e interacciones por controladores
+\cvbulletend
+
+%========== COLUMNA DERECHA ==========
+\switchcolumn
+
+\rsection{Educaci\'on}
+
+\cvcertfull{Bachiller en Ing. de Sistemas}{2021--2026}
+{Universidad Andina del Cusco}{Cusco, Per\'u}
+\cvbullet
+  \item[\small\textbullet] Tesis: detecci\'on vehicular con YOLO y Qwen2.5-VL para an\'alisis de tr\'afico urbano
+  \item[\small\textbullet] Infraestructura: 7 VMs con Proxmox VE, DNS, correo, web, VoIP y monitoreo
+\cvbulletend
+
+\vspace{2pt}
+\rsection{Habilidades T\'ecnicas}
+
+\skillrow{Lenguajes}{Python \textbullet\ Java \textbullet\ TypeScript \textbullet\ JavaScript \textbullet\ PHP \textbullet\ Kotlin \textbullet\ C\# \textbullet\ C++ \textbullet\ Bash \textbullet\ SQL \textbullet\ HTML5 \textbullet\ CSS3}
+
+\skillrow{Frameworks}{React \textbullet\ Next.js \textbullet\ Angular \textbullet\ Node.js \textbullet\ Spring Boot \textbullet\ Laravel \textbullet\ Flask \textbullet\ FastAPI \textbullet\ PyTorch \textbullet\ TensorFlow \textbullet\ OpenCV}
+
+\skillrow{Infraestructura \& DevOps}{Proxmox VE \textbullet\ Docker \textbullet\ Kubernetes \textbullet\ Nginx \textbullet\ Linux \textbullet\ TrueNAS/ZFS \textbullet\ BIND9 \textbullet\ Tailscale \textbullet\ n8n \textbullet\ Cloudflare \textbullet\ Vercel}
+
+\skillrow{Inteligencia Artificial}{YOLO \textbullet\ Qwen2.5-VL \textbullet\ LM Studio \textbullet\ Ollama \textbullet\ Stable Diffusion \textbullet\ ComfyUI \textbullet\ PaddleOCR \textbullet\ LangChain \textbullet\ Hugging Face}
+
+\skillrow{Redes \& Ciberseguridad}{Cisco Packet Tracer \textbullet\ Inter-VLAN \textbullet\ Subnetting \textbullet\ Wireshark \textbullet\ Kali Linux \textbullet\ Ethical Hacking \textbullet\ SSH \textbullet\ Firewall}
+
+\skillrow{Bases de Datos}{MySQL \textbullet\ MariaDB \textbullet\ PostgreSQL \textbullet\ MongoDB \textbullet\ SQLite \textbullet\ Redis \textbullet\ Firebase}
+
+\skillrow{Dise\~no \& Audiovisual}{Photoshop \textbullet\ Illustrator \textbullet\ Premiere Pro \textbullet\ After Effects \textbullet\ Figma \textbullet\ Blender \textbullet\ Unity \textbullet\ Unreal Engine}
+
+\skillrow{Herramientas}{Git \textbullet\ GitHub \textbullet\ VS Code \textbullet\ IntelliJ IDEA \textbullet\ Postman \textbullet\ DBeaver \textbullet\ Jupyter \textbullet\ Vercel}
+
+\vspace{2pt}
+\rsection{Certificaciones}
+
+\cvcertfull{Analista y Programador de Sistemas}{Sep. 2025}
+{Universidad Andina del Cusco}{}
+
+\cvcertfull{Administrador de Redes}{Sep. 2025}
+{Universidad Andina del Cusco}{}
+
+\cvcertfull{Google Cybersecurity Professional}{2025--2026}
+{Coursera -- Google}{9 cursos}
+\cvbullet
+  \item[\small\textbullet] {\scriptsize Foundations \textbullet\ Security Risks \textbullet\ Networks \textbullet\ Linux/SQL \textbullet\ Threats \textbullet\ Detection \textbullet\ Python \textbullet\ Cybersecurity Jobs \textbullet\ AI Job Search}
+\cvbulletend
+
+\cvcertfull{NDG Linux Essentials \& Unhatched}{2023--2024}
+{Cisco Networking Academy}{}
+
+\cvcertfull{Introduction to Ethical Hacking}{2024}
+{Cisco Networking Academy}{}
+
+\cvcertfull{Fundamentos de IA Generativa}{2025}
+{Microsoft Learn}{4 m\'odulos}
+
+\cvcertfull{UI/UX Design Fundamentals}{2024}
+{Great Learning}{}
+
+\cvcertfull{Principiante en Programaci\'on -- ONE G4}{2023}
+{Alura Latam}{}
+\cvbullet
+  \item[\small\textbullet] {\scriptsize HTML5/CSS3 \textbullet\ L\'ogica de Programaci\'on \textbullet\ Git/GitHub \textbullet\ Productividad}
+\cvbulletend
+
+\cvcertfull{JavaScript e IA Aplicada -- ONE G7}{2024}
+{Alura Latam}{}
+\cvbullet
+  \item[\small\textbullet] {\scriptsize JavaScript \textbullet\ APIs \textbullet\ GitHub Copilot \textbullet\ ChatGPT \textbullet\ Git avanzado}
+\cvbulletend
+
+\cvcertfull{Seguridad Inform\'atica \& Metodolog\'ia}{2025}
+{Universidad Andina del Cusco}{}
+
+\vspace{4pt}
+\rsection{Idiomas}
+
+{\footnotesize
+\textbf{Espa\~nol} \hfill Nativo\\[2pt]
+\textbf{Portugu\'es} \hfill Avanzado\\[2pt]
+\textbf{Ingl\'es} \hfill Intermedio\\[2pt]
+\textbf{Alem\'an} \hfill Intermedio b\'asico\\[2pt]
+\textbf{Japon\'es} \hfill B\'asico
+}
+
+\end{paracol}
+\end{document}
