@@ -37,7 +37,7 @@ const SOCIAL = [
     emoji: "WA",
     gradient: "from-green-600 to-green-500",
     glow: "shadow-green-500/30",
-    desc: "+51 977 175 820",
+    desc: "+51 975 604 394",
   },
   {
     label: "Discord",
